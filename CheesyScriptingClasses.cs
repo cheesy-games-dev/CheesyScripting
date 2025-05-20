@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using UltEvents;
 using UnityEngine;
 
@@ -35,18 +33,6 @@ namespace CheesyScripting
     }
 
     [System.Serializable]
-    public struct CustomVariable {
-        public string name;
-        public object value;
-        public void SetValue(object value) {
-            this.value = value;
-        }
-        public object GetValue() {
-            return value;
-        }
-    }
-
-    [System.Serializable]
     public class CheesyMonoScript {
 
         public DefaultMethods DefaultMethods;
@@ -54,12 +40,14 @@ namespace CheesyScripting
         public SpecialMethods SpecialMethods;
 
         public List<CustomMethod> CustomMethods;
-        public List<CustomVariable> CustomVariables;
 
         #region MethodRefs
-        public void Awake() => DefaultMethods.OnAwake.Invoke();
-        public void Start() => DefaultMethods.OnStart.Invoke();
-        public void Update() => DefaultMethods.OnUpdate.Invoke();
+        public void Awake() =>
+            DefaultMethods.OnAwake.Invoke();
+        public void Start() =>
+            DefaultMethods.OnStart.Invoke();
+        public void Update() =>
+            DefaultMethods.OnUpdate.Invoke();
         public void LateUpdate() => DefaultMethods.OnLateUpdate.Invoke();
         public void FixedUpdate() => DefaultMethods.OnFixedUpdate.Invoke();
         public void OnCollisionEnter(Collision collision) => SpecialMethods.OnCollisionEnter.Invoke(collision);
@@ -77,13 +65,5 @@ namespace CheesyScripting
             }
             Debug.Log("Could not find method with name: "+name);
         }
-
-        public void SetVariable(object value, int index) {
-            var var = new CustomVariable();
-            var.SetValue(value);
-            CustomVariables[index].SetValue(var);
-        }
-
-        public object GetVariable(int index) => CustomVariables[index].value;
     }
 }
