@@ -27,8 +27,10 @@ namespace CheesyScripting
     [System.Serializable]
     public struct SpecialMethods {
         public UltEvent<Collision> OnCollisionEnter;
+        public UltEvent<Collision> OnCollisionStay;
         public UltEvent<Collision> OnCollisionExit;
         public UltEvent<Collider> OnTriggerEnter;
+        public UltEvent<Collider> OnTriggerStay;
         public UltEvent<Collider> OnTriggerExit;
     }
 
@@ -51,8 +53,10 @@ namespace CheesyScripting
         public void LateUpdate() => DefaultMethods.OnLateUpdate.Invoke();
         public void FixedUpdate() => DefaultMethods.OnFixedUpdate.Invoke();
         public void OnCollisionEnter(Collision collision) => SpecialMethods.OnCollisionEnter.Invoke(collision);
+        public void OnCollisionStay(Collision collision) => SpecialMethods.OnCollisionStay.Invoke(collision);
         public void OnCollisionExit(Collision collision) => SpecialMethods.OnCollisionExit.Invoke(collision);
         public void OnTriggerEnter(Collider other) => SpecialMethods.OnTriggerEnter.Invoke(other);
+        public void OnTriggerStay(Collider other) => SpecialMethods.OnTriggerStay.Invoke(other);
         public void OnTriggerExit(Collider other) => SpecialMethods.OnTriggerExit.Invoke(other);
         #endregion
 

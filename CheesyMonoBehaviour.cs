@@ -12,8 +12,10 @@ namespace CheesyScripting
         private void LateUpdate() => Mono.LateUpdate();
         private void FixedUpdate() => Mono.FixedUpdate();
         private void OnCollisionEnter(Collision collision) => Mono.OnCollisionEnter(collision);
+        private void OnCollisionStay(Collision collision) => Mono.OnCollisionStay(collision);
         private void OnCollisionExit(Collision collision) => Mono.OnCollisionExit(collision);
         private void OnTriggerEnter(Collider other) => Mono.OnTriggerEnter(other);
+        private void OnTriggerStay(Collider other) => Mono.OnTriggerStay(other);
         private void OnTriggerExit(Collider other) => Mono.OnTriggerExit(other);
         public void CallMethodFromList(string name) => Mono.CallMethodFromList(name);
 
