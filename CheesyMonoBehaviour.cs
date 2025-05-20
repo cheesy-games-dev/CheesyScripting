@@ -20,22 +20,25 @@ namespace CheesyScripting
 #endregion
 
         #region Variable
-        public void SetVariable(string name, object value, int index) => Mono.SetVariable(name, value, index);
+        public void SetVariable(object value, int index) => Mono.SetVariable(value, index);
         public object GetVariable(int index) => Mono.GetVariable(index);
 
         public string IGetVariable(int index) => GetVariable(index).ToString();
 
-        public void ISetVariable(string name, Object value, int index) => SetVariable(name, value, index);
-        public void ISetVariable(string name, int value, int index) => SetVariable(name, value, index);
-        public void ISetVariable(string name, float value, int index) => SetVariable(name, value, index);
-        public void ISetVariable(string name, string value, int index) => SetVariable(name, value, index);
-        public void ISetVariable(string name, bool value, int index) => SetVariable(name, value, index);
-        public void ISetVariable(string name, Vector2 value, int index) => SetVariable(name, value, index);
-        public void ISetVariable(string name, Vector3 value, int index) => SetVariable(name, value, index);
-        public void ISetVariable(string name, Quaternion value, int index) => SetVariable(name, value, index);
+        public void ISetVariable(Object value, int index) => SetVariable(value, index);
+        public void ISetVariable(int value, int index) => SetVariable(value, index);
+        public void ISetVariable(float value, int index) => SetVariable(value, index);
+        public void ISetVariable(string value, int index) => SetVariable(value, index);
+        public void ISetVariable(bool value, int index) => SetVariable(value, index);
+        public void ISetVariable(Vector2 value, int index) => SetVariable(value, index);
+        public void ISetVariable(Vector3 value, int index) => SetVariable(value, index);
+        public void ISetVariable(Quaternion value, int index) => SetVariable(value, index);
         #endregion
 
         public void PrintString(string log) {
+            print(log.ToString());
+        }
+        public void PrintLog(object log) {
             print(log.ToString());
         }
     }

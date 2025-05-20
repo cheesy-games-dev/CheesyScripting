@@ -37,7 +37,7 @@ namespace CheesyScripting
     [System.Serializable]
     public struct CustomVariable {
         public string name;
-        private object value;
+        public object value;
         public void SetValue(object value) {
             this.value = value;
         }
@@ -78,13 +78,12 @@ namespace CheesyScripting
             Debug.Log("Could not find method with name: "+name);
         }
 
-        public void SetVariable(string name, object value, int index) {
+        public void SetVariable(object value, int index) {
             var var = new CustomVariable();
-            var.name = name;
             var.SetValue(value);
-            CustomVariables.Insert(index, var);
+            CustomVariables[index].SetValue(var);
         }
 
-        public object GetVariable(int index) => CustomVariables.ToArray().GetValue(index);
+        public object GetVariable(int index) => CustomVariables[index].value;
     }
 }
