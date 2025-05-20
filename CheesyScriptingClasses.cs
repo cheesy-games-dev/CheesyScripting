@@ -69,5 +69,10 @@ namespace CheesyScripting
             }
             Debug.Log("Could not find method with name: "+name);
         }
+
+        public Vector3 MultiplyVector3(Vector3 a, float b) {
+            Vector3 c = a * b;
+            return c;
+        }
     }
 }
