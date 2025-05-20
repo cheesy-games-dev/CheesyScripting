@@ -1,5 +1,5 @@
 # CheesyScripting
-visual scripting for unity made to reduce skidding/skids (script kiddies)
+visual scripting for unity made for easy game modding and to reduce skidding/skids (script kiddies)
 
 you need ult events btw
 [Website](https://kybernetik.com.au/ultevents/)
