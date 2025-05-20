@@ -7,9 +7,7 @@ namespace CheesyScripting {
 
         public bool ignore = true;
 
-        void Update() {
-            if (Physics.GetIgnoreCollision(collider1, collider2) != ignore)
-                Physics.IgnoreCollision(collider1, collider2, ignore);
-        }
+        void Update() =>
+        Physics.IgnoreCollision(collider1, collider2, ignore);
     }
 }

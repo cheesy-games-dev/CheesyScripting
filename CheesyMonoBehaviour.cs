@@ -35,9 +35,46 @@ namespace CheesyScripting
         //private void OnTriggerExit(Collider other) => Mono.OnTriggerExit(other);
 
         public void CallMethodFromList(string name) => Mono.CallMethodFromList(name);
-        public Vector3 MultiplyVector3(Vector3 a, float b) {
-            return Mono.MultiplyVector3(a, b);
+
+        #region Math
+        public int Add(int a, int b) {
+            return Math.Addition.Int(a, b);
         }
+        public float Add(float a, float b) {
+            return Math.Addition.Float(a, b);
+        }
+        public Vector3 Add(Vector3 a, Vector3 b) {
+            return Math.Addition.Vector3(a, b);
+        }
+        public int Subtract(int a, int b) {
+            return Math.Subtract.Int(a, b);
+        }
+        public float Subtract(float a, float b) {
+            return Math.Subtract.Float(a, b);
+        }
+        public Vector3 Subtract(Vector3 a, Vector3 b) {
+            return Math.Subtract.Vector3(a, b);
+        }
+        public int Multiply(int a, int b) {
+            return Math.Multiply.Int(a, b);
+        }
+        public float Multiply(float a, float b) {
+            return Math.Multiply.Float(a, b);
+        }
+        public Vector3 Multiply(Vector3 a, float b) {
+            return Math.Multiply.Vector3(a, b);
+        }
+        public int Divide(int a, int b) {
+            return Math.Divide.Int(a, b);
+        }
+        public float Divide(float a, float b) {
+            return Math.Divide.Float(a, b);
+        }
+        public Vector3 Divide(Vector3 a, float b) {
+            return Math.Divide.Vector3(a, b);
+        }
+        #endregion
+
         public void PrintString(string log) {
             print(log.ToString());
         }

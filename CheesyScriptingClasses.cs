@@ -69,10 +69,56 @@ namespace CheesyScripting
             }
             Debug.Log("Could not find method with name: "+name);
         }
+    }
+    public struct Math {
+        public struct Addition {
+            public static int Int(int a, int b) {
+                return a + b;
+            }
+            public static float Float(float a, float b) {
+                return a + b;
+            }
+            public static Vector3 Vector3(Vector3 a, Vector3 b) {
+                Vector3 c = a + b;
+                return c;
+            }
+        }
+        public struct Subtract {
+            public static int Int(int a, int b) {
+                return a - b;
+            }
+            public static float Float(float a, float b) {
+                return a - b;
+            }
+            public static Vector3 Vector3(Vector3 a, Vector3 b) {
+                Vector3 c = a - b;
+                return c;
+            }
+        }
+        public struct Divide {
+            public static int Int(int a, int b) {
+                return a / b;
+            }
+            public static float Float(float a, float b) {
+                return a / b;
+            }
+            public static Vector3 Vector3(Vector3 a, float b) {
+                Vector3 c = a / b;
+                return c;
+            }
+        }
 
-        public Vector3 MultiplyVector3(Vector3 a, float b) {
-            Vector3 c = a * b;
-            return c;
+        public struct Multiply {
+            public static int Int(int a, int b) {
+                return a * b;
+            }
+            public static float Float(float a, float b) {
+                return a * b;
+            }
+            public static Vector3 Vector3(Vector3 a, float b) {
+                Vector3 c = a * b;
+                return c;
+            }
         }
     }
 }
