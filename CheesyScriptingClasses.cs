@@ -35,7 +35,17 @@ namespace CheesyScripting
     }
 
     [System.Serializable]
+    public struct FlagGate {
+        public string name;
+        public bool invert;
+        public UltEvent OnTrue;
+        public UltEvent OnFalse;
+    }
+
+    [System.Serializable]
     public class CheesyMonoScript {
+        
+        public bool DebugMode = false;
 
         public DefaultMethods DefaultMethods;
 
@@ -43,9 +53,14 @@ namespace CheesyScripting
 
         public List<CustomMethod> CustomMethods;
 
+        public List<FlagGate> FlagGates;
+
         #region MethodRefs
-        public void Awake() =>
+        public void Awake() {
+            if (!Application.isEditor)
+                DebugMode = false;
             DefaultMethods.OnAwake.Invoke();
+        }
         public void Start() =>
             DefaultMethods.OnStart.Invoke();
         public void Update() =>
@@ -64,10 +79,39 @@ namespace CheesyScripting
             foreach (var method in CustomMethods) {
                 if (method.name == name) {
                     method.method.Invoke();
+                    if (DebugMode)
+                        Debug.Log(method);
                     return;
                 }
             }
             Debug.Log("Could not find method with name: "+name);
+        }
+        public void CallFlagGateFromList(string name, object a, object b) {
+            foreach (var method in FlagGates) {
+                if (method.name == name) {
+                    FlagExecute(a, b, method);
+                    return;
+                }
+            }
+            Debug.Log("Could not find method with name: " + name);
+        }
+
+        private void FlagExecute(object a, object b, FlagGate method) {
+            bool equal = a.Equals(b);
+            if (method.invert) {
+                if (equal)
+                    method.OnFalse.Invoke();
+                else
+                    method.OnTrue.Invoke();
+            }
+            else {
+                if (equal)
+                    method.OnTrue.Invoke();
+                else
+                    method.OnFalse.Invoke();
+            }
+            if (DebugMode)
+                Debug.Log($"Is Equal: {equal} + Method: {method}");
         }
     }
     public struct Math {

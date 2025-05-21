@@ -36,6 +36,8 @@ namespace CheesyScripting
 
         public void CallMethodFromList(string name) => Mono.CallMethodFromList(name);
 
+        public void CallFlagFromList(string name, object a = null, object b = null) => Mono.CallFlagGateFromList(name, a, b);
+
         #region Math
         public int Add(int a, int b) {
             return Math.Addition.Int(a, b);
@@ -81,5 +83,10 @@ namespace CheesyScripting
         public void PrintLog(object log) {
             print(log.ToString());
         }
+
+
+        public const object nullobject = null;
+        public const bool truebool = true;
+        public const bool falsebool = false;
     }
 }

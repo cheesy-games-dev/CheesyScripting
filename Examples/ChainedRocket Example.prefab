@@ -481,6 +481,7 @@ GameObject:
   - component: {fileID: 5616936811283967774}
   - component: {fileID: 4027473088907977636}
   - component: {fileID: 3001723356596725488}
+  - component: {fileID: 870825264097591333}
   m_Layer: 0
   m_Name: Chain
   m_TagString: Untagged
@@ -585,7 +586,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4252865108114446534}
   serializedVersion: 5
-  m_Mass: 50
+  m_Mass: 20
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -617,8 +618,8 @@ SpringJoint:
   m_Anchor: {x: 0, y: 0.5, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
-  m_Spring: 5000
-  m_Damper: 50
+  m_Spring: 500
+  m_Damper: 1
   m_MinDistance: 0
   m_MaxDistance: 2
   m_Tolerance: 0.025
@@ -641,6 +642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mono:
+    DebugMode: 0
     DefaultMethods:
       OnAwake:
         _PersistentCalls: []
@@ -658,6 +660,17 @@ MonoBehaviour:
             _Z: 0
             _W: 0
             _Object: {fileID: 13400000, guid: 86bf49c772111eb458551a5d6b4ca2a7, type: 2}
+        - _Target: {fileID: 870825264097591333}
+          _MemberName: boolValue=
+          _PersistentArguments:
+          - _Type: 1
+            _Int: 1
+            _String: 
+            _X: 0
+            _Y: 0
+            _Z: 0
+            _W: 0
+            _Object: {fileID: 0}
       OnUpdate:
         _PersistentCalls:
         - _Target: {fileID: 2017949869671758828}
@@ -709,6 +722,17 @@ MonoBehaviour:
         - _Target: {fileID: 3001723356596725488}
           _MemberName: Play
           _PersistentArguments: []
+        - _Target: {fileID: 870825264097591333}
+          _MemberName: boolValue=
+          _PersistentArguments:
+          - _Type: 1
+            _Int: 0
+            _String: 
+            _X: 0
+            _Y: 0
+            _Z: 0
+            _W: 0
+            _Object: {fileID: 0}
       OnTriggerEnter:
         _PersistentCalls: []
       OnTriggerStay:
@@ -763,6 +787,7 @@ MonoBehaviour:
             _Z: 0
             _W: 0
             _Object: {fileID: 0}
+    FlagGates: []
 --- !u!120 &5616936811283967774
 LineRenderer:
   serializedVersion: 2
@@ -980,6 +1005,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &870825264097591333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4252865108114446534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6bd863f72479c1408b861bfed31de98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intValue: 0
+  floatValue: 0
+  boolValue: 1
+  stringValue: 
+  vectorValue: {x: 0, y: 0, z: 0}
+  quaternionValue: {x: 0, y: 0, z: 0, w: 0}
+  unityObjectValue: {fileID: 0}
 --- !u!1 &4421146794976247996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,9 +1179,7 @@ GameObject:
   - component: {fileID: 7528546619270474895}
   - component: {fileID: 570326730798650538}
   - component: {fileID: 7874336490333895586}
-  - component: {fileID: 3650758121212282704}
   - component: {fileID: 8660866549857125106}
-  - component: {fileID: 418039206183123487}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -1280,6 +1322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mono:
+    DebugMode: 0
     DefaultMethods:
       OnAwake:
         _PersistentCalls: []
@@ -1302,12 +1345,35 @@ MonoBehaviour:
         _PersistentCalls: []
       OnFixedUpdate:
         _PersistentCalls:
+        - _Target: {fileID: 870825264097591333}
+          _MemberName: boolValue=
+          _PersistentArguments: []
+        - _Target: {fileID: 0}
+          _MemberName: CheesyScripting.CheesyMonoBehaviour, CheesyScripting, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null.truebool=
+          _PersistentArguments: []
         - _Target: {fileID: 7874336490333895586}
-          _MemberName: CallMethodFromList
+          _MemberName: CallFlagFromList
           _PersistentArguments:
           - _Type: 2
             _Int: 0
-            _String: MoveUp
+            _String: IsChained
+            _X: 0
+            _Y: 0
+            _Z: 0
+            _W: 0
+            _Object: {fileID: 0}
+          - _Type: 15
+            _Int: 0
+            _String: System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+            _X: 0
+            _Y: 0
+            _Z: 0
+            _W: 0
+            _Object: {fileID: 0}
+          - _Type: 15
+            _Int: 1
+            _String: System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
             _X: 0
             _Y: 0
             _Z: 0
@@ -1348,7 +1414,7 @@ MonoBehaviour:
           _MemberName: get_up
           _PersistentArguments: []
         - _Target: {fileID: 7874336490333895586}
-          _MemberName: MultiplyVector3
+          _MemberName: Multiply
           _PersistentArguments:
           - _Type: 15
             _Int: 0
@@ -1361,7 +1427,7 @@ MonoBehaviour:
           - _Type: 5
             _Int: 0
             _String: 
-            _X: 250
+            _X: 100
             _Y: 0
             _Z: 0
             _W: 0
@@ -1386,19 +1452,24 @@ MonoBehaviour:
             _Z: 0
             _W: 0
             _Object: {fileID: 0}
---- !u!114 &3650758121212282704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7057865127418151600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c7c5c79a175302459c62e4bd7bea80f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monoBehaviour: {fileID: 7874336490333895586}
+    FlagGates:
+    - name: IsChained
+      invert: 0
+      OnTrue:
+        _PersistentCalls:
+        - _Target: {fileID: 7874336490333895586}
+          _MemberName: CallMethodFromList
+          _PersistentArguments:
+          - _Type: 2
+            _Int: 0
+            _String: MoveUp
+            _X: 0
+            _Y: 0
+            _Z: 0
+            _W: 0
+            _Object: {fileID: 0}
+      OnFalse:
+        _PersistentCalls: []
 --- !u!114 &8660866549857125106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1409,19 +1480,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad9086d966ce6cb439f383477f677966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monoBehaviour: {fileID: 7874336490333895586}
---- !u!114 &418039206183123487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7057865127418151600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0446de86e2ddc748b6a85cf6a797ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monoBehaviour: {fileID: 7874336490333895586}
