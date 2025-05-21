@@ -28,3 +28,8 @@ you need ult events btw
 - Cheesy Default/Special Methods
 
 ![e](https://github.com/cheesy-games-dev/CheesyScripting/blob/b9520f1185586f63535e37f1e3d47ab2ad65ab2c/Screenshot%202025-05-20%20101704.png)
+
+
+- Cheesy Variables
+
+![f](https://github.com/cheesy-games-dev/CheesyScripting/blob/9a8e7536fecd696533c12fd0ee86c1b557ca4535/Screenshot%202025-05-20%20143950.png)
