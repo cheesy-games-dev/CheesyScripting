@@ -1,5 +1,5 @@
 # CheesyScripting
-visual scripting for unity made for making game modding easy and to reduce script kiddies
+visual scripting for unity made for making game modding easy and to reduce script kiddies (important: this is not made to replace c# entirely)
 
 you need ult events btw
 
