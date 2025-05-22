@@ -13,7 +13,7 @@ you need ult events btw
 
 - Cheesy Enablers
   
-![a](https://github.com/cheesy-games-dev/CheesyScripting/blob/6362715461b40a039c5b3bd4559f315fc4f9b69b/Screenshot%202025-05-20%20175054.png)
+![a](https://github.com/cheesy-games-dev/CheesyScripting/blob/cb0b4efbde7c9218d1c7dfd27010ab1d6044e15e/Screenshot%202025-05-20%20171845.png)
 
 - Cheesy Methods
 
